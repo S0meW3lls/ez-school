@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="components/organisms/header :: head"></head>
+<body class="bg-white">
+    <nav th:replace="components/molecules/navbar :: nav"></nav>
+
+    <!-- Courses Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-vibrant-purple via-electric-blue to-vibrant-purple relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-coral-orange/10 via-transparent to-soft-teal/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white py-12">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight">Discover Your Next Skill</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 mb-8">Hand-picked courses taught by industry experts. Live classes, real mentorship, practical skills that advance your career.</p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-3xl mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="text" placeholder="Search by skill, job title, or keyword..." class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/30 text-lg">
+                        <button class="bg-white text-vibrant-purple px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                            </svg>
+                            Search Courses
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white border-b border-gray-200 sticky top-16 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Categories -->
+                <div class="flex-1">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Categories</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-4 py-2 bg-vibrant-purple text-white rounded-lg font-medium hover:bg-purple-700 transition-colors">All Courses</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">Development</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">Design</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">Business</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">Marketing</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">Soft Skills</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors">Data Science</button>
+                    </div>
+                </div>
+
+                <!-- Sort -->
+                <div class="flex items-end gap-3">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Sort by</label>
+                        <select class="px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors">
+                            <option>Most Popular</option>
+                            <option>Highest Rated</option>
+                            <option>Newest</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                    </div>
+                    <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-700 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors flex items-center gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="4" y1="21" x2="4" y2="14"/>
+                            <line x1="4" y1="10" x2="4" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12" y2="3"/>
+                            <line x1="20" y1="21" x2="20" y2="16"/>
+                            <line x1="20" y1="12" x2="20" y2="3"/>
+                            <line x1="1" y1="14" x2="7" y2="14"/>
+                            <line x1="9" y1="8" x2="15" y2="8"/>
+                            <line x1="17" y1="16" x2="23" y2="16"/>
+                        </svg>
+                        Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Search by Job Role -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Popular Career Paths</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <button class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all border-2 border-transparent hover:border-vibrant-purple group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-vibrant-purple to-purple-400 rounded-lg flex items-center justify-center text-white mb-3 mx-auto group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 text-center">Web Developer</p>
+                </button>
+                <button class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all border-2 border-transparent hover:border-electric-blue group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-electric-blue to-blue-400 rounded-lg flex items-center justify-center text-white mb-3 mx-auto group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 text-center">UI/UX Designer</p>
+                </button>
+                <button class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all border-2 border-transparent hover:border-coral-orange group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-coral-orange to-orange-400 rounded-lg flex items-center justify-center text-white mb-3 mx-auto group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 text-center">Data Scientist</p>
+                </button>
+                <button class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all border-2 border-transparent hover:border-soft-teal group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-soft-teal to-teal-400 rounded-lg flex items-center justify-center text-white mb-3 mx-auto group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 text-center">Product Manager</p>
+                </button>
+                <button class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all border-2 border-transparent hover:border-bright-yellow group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-bright-yellow to-yellow-400 rounded-lg flex items-center justify-center text-white mb-3 mx-auto group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 text-center">Marketing Pro</p>
+                </button>
+                <button class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all border-2 border-transparent hover:border-vibrant-purple group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-vibrant-purple to-purple-400 rounded-lg flex items-center justify-center text-white mb-3 mx-auto group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 text-center">Team Leader</p>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl font-bold text-gray-900">All Courses <span class="text-gray-500 font-normal text-2xl">(48 courses)</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-vibrant-purple">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop" alt="React Mastery" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                            Live Classes
+                        </span>
+                        <span class="absolute top-4 right-4 bg-vibrant-purple text-white px-3 py-1 rounded-full text-sm font-medium">Development</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="Sarah Chen" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold text-gray-900">Sarah Chen</p>
+                                <p class="text-sm text-gray-600">Full-Stack Developer</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Complete React & Next.js Masterclass</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Master modern React development with hooks, context, and Next.js. Build production-ready applications!</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                4.9 (432)
+                            </span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">12 weeks</span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">24 lessons</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-3xl font-bold text-gray-900">$89</span>
+                                <span class="text-gray-500 line-through ml-2">$199</span>
+                            </div>
+                            <a href="#" class="bg-vibrant-purple text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-electric-blue">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Data Science" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-electric-blue text-white px-3 py-1 rounded-full text-sm font-medium">Starting Soon</span>
+                        <span class="absolute top-4 right-4 bg-coral-orange text-white px-3 py-1 rounded-full text-sm font-medium">Data Science</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="Marcus Johnson" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold text-gray-900">Marcus Johnson</p>
+                                <p class="text-sm text-gray-600">Data Science Lead</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Python for Data Science & ML</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Learn Python, data analysis, visualization, and machine learning from scratch. Real-world projects included!</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                5.0 (289)
+                            </span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">16 weeks</span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">32 lessons</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-3xl font-bold text-gray-900">$99</span>
+                                <span class="text-gray-500 line-through ml-2">$249</span>
+                            </div>
+                            <a href="#" class="bg-vibrant-purple text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-coral-orange">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=250&fit=crop" alt="UI/UX Design" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-soft-teal text-white px-3 py-1 rounded-full text-sm font-medium">Design</span>
+                        <span class="absolute bottom-4 left-4 bg-bright-yellow text-gray-900 px-3 py-1 rounded-full text-sm font-bold">BESTSELLER</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=40&h=40&fit=crop" alt="Emma Rodriguez" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold text-gray-900">Emma Rodriguez</p>
+                                <p class="text-sm text-gray-600">UX Design Director</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Complete UI/UX Design with Figma</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Design beautiful, user-friendly interfaces. Learn design systems, prototyping, and user research!</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                4.8 (567)
+                            </span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">10 weeks</span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">20 lessons</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-3xl font-bold text-gray-900">$79</span>
+                                <span class="text-gray-500 line-through ml-2">$179</span>
+                            </div>
+                            <a href="#" class="bg-vibrant-purple text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-soft-teal">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Digital Marketing" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-vibrant-purple text-white px-3 py-1 rounded-full text-sm font-medium">Marketing</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=40&h=40&fit=crop" alt="Alex Kim" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold text-gray-900">Alex Kim</p>
+                                <p class="text-sm text-gray-600">Marketing Strategist</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Growth Marketing & SEO Masterclass</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Scale your business with proven marketing strategies. SEO, content marketing, and growth hacking!</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                4.9 (345)
+                            </span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">8 weeks</span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">16 lessons</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-3xl font-bold text-gray-900">$69</span>
+                                <span class="text-gray-500 line-through ml-2">$149</span>
+                            </div>
+                            <a href="#" class="bg-vibrant-purple text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 5 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-vibrant-purple">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=250&fit=crop" alt="Public Speaking" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-electric-blue text-white px-3 py-1 rounded-full text-sm font-medium">Soft Skills</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=40&h=40&fit=crop" alt="Jessica Taylor" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold text-gray-900">Jessica Taylor</p>
+                                <p class="text-sm text-gray-600">Public Speaking Coach</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Confident Public Speaking & Presentation</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Overcome fear and speak with confidence. Master presentations, storytelling, and audience engagement!</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                5.0 (198)
+                            </span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">6 weeks</span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">12 lessons</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-3xl font-bold text-gray-900">$59</span>
+                                <span class="text-gray-500 line-through ml-2">$129</span>
+                            </div>
+                            <a href="#" class="bg-vibrant-purple text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 6 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-electric-blue">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Product Management" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-coral-orange text-white px-3 py-1 rounded-full text-sm font-medium">Business</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop" alt="David Park" class="w-10 h-10 rounded-full">
+                            <div>
+                                <p class="font-semibold text-gray-900">David Park</p>
+                                <p class="text-sm text-gray-600">Product Manager</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Product Management: Zero to PM</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Launch your PM career. Learn product strategy, roadmaps, user stories, and stakeholder management!</p>
+                        
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                4.9 (412)
+                            </span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">14 weeks</span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-700">28 lessons</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-3xl font-bold text-gray-900">$119</span>
+                                <span class="text-gray-500 line-through ml-2">$299</span>
+                            </div>
+                            <a href="#" class="bg-vibrant-purple text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center gap-2 mt-12">
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">Previous</button>
+                <button class="px-4 py-2 bg-vibrant-purple text-white rounded-lg font-medium">1</button>
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">2</button>
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">3</button>
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">4</button>
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-vibrant-purple via-electric-blue to-vibrant-purple relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-coral-orange/10 via-transparent to-soft-teal/10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
+            <h2 class="text-4xl font-bold mb-4">Can't Find What You're Looking For?</h2>
+            <p class="text-xl mb-8 opacity-95">Let us know what skills you want to learn and we'll create courses for you!</p>
+            <a th:href="@{/contact}" class="inline-block bg-white text-vibrant-purple px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Request a Course</a>
+        </div>
+    </section>
+
+    <footer th:replace="components/organisms/footer :: footer"></footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="components/organisms/header :: head"></head>
+<body class="bg-white">
+    <nav th:replace="components/molecules/navbar :: nav"></nav>
+
+    <!-- Contact Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-vibrant-purple via-electric-blue to-vibrant-purple relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-coral-orange/10 via-transparent to-soft-teal/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white py-12">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight">Let's Connect!</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">Have questions? Want to join our mentors? Or just want to say hi? We'd love to hear from you!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form class="space-y-6" th:action="@{/contact}" method="post">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors">
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject *</label>
+                            <select id="subject" name="subject" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors">
+                                <option value="">Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="courses">Course Information</option>
+                                <option value="mentor">Become a Mentor</option>
+                                <option value="business">Business Partnership</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help..." class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-vibrant-purple text-white px-6 py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center gap-2">
+                            Send Message
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Get in Touch</h2>
+                        <p class="text-gray-600">We're here to help and answer any questions you might have.</p>
+                    </div>
+
+                    <div class="grid gap-6">
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-gradient-to-br from-vibrant-purple to-purple-400 rounded-lg flex items-center justify-center text-white mb-4">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Email Us</h3>
+                            <p class="text-vibrant-purple font-semibold mb-1">hello@ezschool.com</p>
+                            <p class="text-sm text-gray-500">We'll respond within 24 hours</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-gradient-to-br from-electric-blue to-blue-400 rounded-lg flex items-center justify-center text-white mb-4">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Call Us</h3>
+                            <p class="text-vibrant-purple font-semibold mb-1">+1 (555) 123-4567</p>
+                            <p class="text-sm text-gray-500">Mon-Fri, 9am-6pm EST</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-gradient-to-br from-coral-orange to-orange-400 rounded-lg flex items-center justify-center text-white mb-4">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Visit Us</h3>
+                            <p class="text-vibrant-purple font-semibold mb-1">123 Learning Street</p>
+                            <p class="text-sm text-gray-500">San Francisco, CA 94102</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-gradient-to-br from-soft-teal to-teal-400 rounded-lg flex items-center justify-center text-white mb-4">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Live Chat</h3>
+                            <p class="text-vibrant-purple font-semibold mb-1">Chat with our team</p>
+                            <p class="text-sm text-gray-500">Available during business hours</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
+                        <div class="flex gap-4 justify-center">
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 hover:bg-vibrant-purple hover:text-white transition-colors" aria-label="Twitter">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 hover:bg-electric-blue hover:text-white transition-colors" aria-label="LinkedIn">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 hover:bg-coral-orange hover:text-white transition-colors" aria-label="Instagram">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 hover:bg-red-500 hover:text-white transition-colors" aria-label="YouTube">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/>
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p class="text-xl text-center text-gray-600 mb-16">Quick answers to common questions. Can't find what you're looking for? Contact us!</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-vibrant-purple">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">How quickly will I get a response?</h3>
+                    <p class="text-gray-600 leading-relaxed">We aim to respond to all inquiries within 24 hours during business days. Urgent matters are prioritized.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-vibrant-purple">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Can I speak with someone directly?</h3>
+                    <p class="text-gray-600 leading-relaxed">Absolutely! You can call us during business hours or schedule a call at your convenience through our calendar.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-vibrant-purple">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Do you offer technical support?</h3>
+                    <p class="text-gray-600 leading-relaxed">Yes! Our support team is available via email and live chat to help with any technical issues you may encounter.</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-vibrant-purple">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">How do I become a mentor?</h3>
+                    <p class="text-gray-600 leading-relaxed">We'd love to hear from you! Select "Become a Mentor" in the contact form or email us at mentors@ezschool.com with your background.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="components/organisms/footer :: footer"></footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

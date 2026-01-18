@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="components/organisms/header :: head"></head>
+<body class="bg-white">
+    <nav th:replace="components/molecules/navbar :: nav"></nav>
+
+    <!-- Mentors Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-vibrant-purple via-electric-blue to-vibrant-purple relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-coral-orange/10 via-transparent to-soft-teal/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white py-12">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight">Meet Your Mentors</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">Learn from experts who teach like friends. Our mentors are carefully selected for their teaching skills, industry experience, and genuine passion for helping you succeed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-gray-50 border-b border-gray-200 sticky top-16 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                <div class="flex flex-wrap gap-2">
+                    <button class="px-4 py-2 bg-vibrant-purple text-white rounded-lg font-medium hover:bg-purple-700 transition-colors">All Mentors</button>
+                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-gray-100 transition-colors">Development</button>
+                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-gray-100 transition-colors">Design</button>
+                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-gray-100 transition-colors">Business</button>
+                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-gray-100 transition-colors">Marketing</button>
+                    <button class="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-gray-100 transition-colors">Soft Skills</button>
+                </div>
+                <div class="flex items-center gap-2">
+                    <select class="px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors">
+                        <option>Sort by: Most Popular</option>
+                        <option>Sort by: Highest Rated</option>
+                        <option>Sort by: Newest</option>
+                        <option>Sort by: Most Students</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentors Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mentor Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-vibrant-purple">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop" alt="Sarah Chen" class="w-full h-64 object-cover">
+                        <span class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                            Live Now
+                        </span>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="bg-white/95 backdrop-blur-sm rounded-lg p-3">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        4.9
+                                    </span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">1,234 students</span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">15 courses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Sarah Chen</h3>
+                        <p class="text-vibrant-purple font-semibold mb-3">Full-Stack Developer</p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Senior engineer at Google with 10+ years building scalable web applications. Passionate about making complex concepts simple and fun!</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 text-vibrant-purple rounded-full text-sm font-medium">React</span>
+                            <span class="px-3 py-1 bg-blue-100 text-electric-blue rounded-full text-sm font-medium">Node.js</span>
+                            <span class="px-3 py-1 bg-orange-100 text-coral-orange rounded-full text-sm font-medium">TypeScript</span>
+                        </div>
+
+                        <div class="border-t pt-4 space-y-2">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M2 12h20"/>
+                                </svg>
+                                <span>Next live class: Today at 3:00 PM</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                <span>Avg. response time: 2 hours</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 mt-6">
+                            <a href="#" class="flex-1 bg-vibrant-purple text-white text-center px-4 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">View Profile</a>
+                            <a href="#" class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-electric-blue">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="Marcus Johnson" class="w-full h-64 object-cover">
+                        <span class="absolute top-4 right-4 bg-electric-blue text-white px-3 py-1 rounded-full text-sm font-medium">Starting Soon</span>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="bg-white/95 backdrop-blur-sm rounded-lg p-3">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        5.0
+                                    </span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">856 students</span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">8 courses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Marcus Johnson</h3>
+                        <p class="text-electric-blue font-semibold mb-3">Data Science Lead</p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Former Meta data scientist specializing in ML and analytics. I love breaking down AI concepts so anyone can understand and apply them!</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 text-vibrant-purple rounded-full text-sm font-medium">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 text-electric-blue rounded-full text-sm font-medium">Machine Learning</span>
+                            <span class="px-3 py-1 bg-teal-100 text-soft-teal rounded-full text-sm font-medium">SQL</span>
+                        </div>
+
+                        <div class="border-t pt-4 space-y-2">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M2 12h20"/>
+                                </svg>
+                                <span>Next live class: Tomorrow at 5:30 PM</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                <span>Avg. response time: 3 hours</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 mt-6">
+                            <a href="#" class="flex-1 bg-vibrant-purple text-white text-center px-4 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">View Profile</a>
+                            <a href="#" class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-coral-orange">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop" alt="Emma Rodriguez" class="w-full h-64 object-cover">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="bg-white/95 backdrop-blur-sm rounded-lg p-3">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        4.8
+                                    </span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">2,103 students</span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">12 courses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Emma Rodriguez</h3>
+                        <p class="text-coral-orange font-semibold mb-3">UX Design Director</p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Award-winning designer with 12 years at top agencies. I teach design thinking that actually works in real-world projects!</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 text-vibrant-purple rounded-full text-sm font-medium">Figma</span>
+                            <span class="px-3 py-1 bg-orange-100 text-coral-orange rounded-full text-sm font-medium">UI/UX</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-bright-yellow rounded-full text-sm font-medium">Design Systems</span>
+                        </div>
+
+                        <div class="border-t pt-4 space-y-2">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M2 12h20"/>
+                                </svg>
+                                <span>Next live class: Wed at 2:00 PM</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                <span>Avg. response time: 1 hour</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 mt-6">
+                            <a href="#" class="flex-1 bg-vibrant-purple text-white text-center px-4 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">View Profile</a>
+                            <a href="#" class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-soft-teal">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop" alt="Alex Kim" class="w-full h-64 object-cover">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="bg-white/95 backdrop-blur-sm rounded-lg p-3">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        4.9
+                                    </span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">1,567 students</span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">10 courses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Alex Kim</h3>
+                        <p class="text-soft-teal font-semibold mb-3">Marketing Strategist</p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Growth marketer who scaled 3 startups to 7-figures. I'll show you marketing tactics that actually work without the BS!</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-teal-100 text-soft-teal rounded-full text-sm font-medium">SEO</span>
+                            <span class="px-3 py-1 bg-purple-100 text-vibrant-purple rounded-full text-sm font-medium">Content Marketing</span>
+                            <span class="px-3 py-1 bg-blue-100 text-electric-blue rounded-full text-sm font-medium">Growth</span>
+                        </div>
+
+                        <div class="border-t pt-4 space-y-2">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M2 12h20"/>
+                                </svg>
+                                <span>Next live class: Thu at 6:00 PM</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                <span>Avg. response time: 4 hours</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 mt-6">
+                            <a href="#" class="flex-1 bg-vibrant-purple text-white text-center px-4 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">View Profile</a>
+                            <a href="#" class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 5 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-vibrant-purple">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop" alt="Jessica Taylor" class="w-full h-64 object-cover">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="bg-white/95 backdrop-blur-sm rounded-lg p-3">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        5.0
+                                    </span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">945 students</span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">6 courses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Jessica Taylor</h3>
+                        <p class="text-vibrant-purple font-semibold mb-3">Public Speaking Coach</p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">TEDx speaker and communication expert. I'll help you speak confidently and connect authentically with any audience!</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-100 text-coral-orange rounded-full text-sm font-medium">Public Speaking</span>
+                            <span class="px-3 py-1 bg-purple-100 text-vibrant-purple rounded-full text-sm font-medium">Leadership</span>
+                            <span class="px-3 py-1 bg-teal-100 text-soft-teal rounded-full text-sm font-medium">Communication</span>
+                        </div>
+
+                        <div class="border-t pt-4 space-y-2">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M2 12h20"/>
+                                </svg>
+                                <span>Next live class: Fri at 4:00 PM</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                <span>Avg. response time: 2 hours</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 mt-6">
+                            <a href="#" class="flex-1 bg-vibrant-purple text-white text-center px-4 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">View Profile</a>
+                            <a href="#" class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 6 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-electric-blue">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop" alt="David Park" class="w-full h-64 object-cover">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <div class="bg-white/95 backdrop-blur-sm rounded-lg p-3">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="flex items-center gap-1 text-bright-yellow font-semibold">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                        </svg>
+                                        4.9
+                                    </span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">1,789 students</span>
+                                    <span class="text-gray-600">•</span>
+                                    <span class="text-gray-700">14 courses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">David Park</h3>
+                        <p class="text-electric-blue font-semibold mb-3">Product Manager</p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Former PM at Amazon and Stripe. I'll teach you how to build products people love and advance your PM career!</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-electric-blue rounded-full text-sm font-medium">Product Strategy</span>
+                            <span class="px-3 py-1 bg-purple-100 text-vibrant-purple rounded-full text-sm font-medium">Agile</span>
+                            <span class="px-3 py-1 bg-teal-100 text-soft-teal rounded-full text-sm font-medium">User Research</span>
+                        </div>
+
+                        <div class="border-t pt-4 space-y-2">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M2 12h20"/>
+                                </svg>
+                                <span>Next live class: Sat at 10:00 AM</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-soft-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                <span>Avg. response time: 3 hours</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 mt-6">
+                            <a href="#" class="flex-1 bg-vibrant-purple text-white text-center px-4 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">View Profile</a>
+                            <a href="#" class="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center gap-2 mt-12">
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">Previous</button>
+                <button class="px-4 py-2 bg-vibrant-purple text-white rounded-lg font-medium">1</button>
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">2</button>
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">3</button>
+                <button class="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-vibrant-purple hover:text-vibrant-purple transition-colors">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-vibrant-purple via-electric-blue to-vibrant-purple relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-coral-orange/10 via-transparent to-soft-teal/10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
+            <h2 class="text-4xl font-bold mb-4">Want to Become a Mentor?</h2>
+            <p class="text-xl mb-8 opacity-95">Join our community of passionate educators and share your expertise with thousands of eager learners!</p>
+            <a th:href="@{/contact}" class="inline-block bg-white text-vibrant-purple px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Apply to Teach</a>
+        </div>
+    </section>
+
+    <footer th:replace="components/organisms/footer :: footer"></footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

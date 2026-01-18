@@ -1,0 +1,23 @@
+<!-- Navbar -->
+<nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="/" class="flex items-center">
+                <span class="text-2xl font-bold bg-gradient-to-r from-vibrant-purple to-electric-blue bg-clip-text text-transparent">Ez School</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a th:href="@{/}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Home</a>
+                <a th:href="@{/courses}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Courses</a>
+                <a th:href="@{/mentors}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Mentors</a>
+                <a th:href="@{/business}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">For Business</a>
+                <a th:href="@{/contact}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Contact</a>
+                <a th:href="@{/login}" class="bg-vibrant-purple text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors font-medium">Login</a>
+            </div>
+            <button class="md:hidden flex flex-col space-y-1.5" id="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+            </button>
+        </div>
+    </div>
+</nav>

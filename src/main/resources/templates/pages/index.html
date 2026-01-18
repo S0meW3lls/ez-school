@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="components/organisms/header :: head"></head>
+<body class="bg-white">
+    <nav th:replace="components/molecules/navbar :: nav"></nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-20 overflow-hidden bg-gradient-to-br from-vibrant-purple via-electric-blue to-vibrant-purple">
+        <div class="absolute inset-0 bg-gradient-to-r from-coral-orange/10 via-transparent to-soft-teal/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white py-16">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight">Skills Made Easy</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95">Learn from mentors who teach like friends. Live classes, real connections, career-focused skills—all at your own pace.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a th:href="@{/courses}" class="bg-white text-vibrant-purple px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">Explore Courses</a>
+                    <a th:href="@{/courses}" class="bg-vibrant-purple/20 backdrop-blur-sm text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors">Try a Free Lesson</a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-3xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">10K+</div>
+                        <div class="text-sm opacity-90">Active Learners</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">95%</div>
+                        <div class="text-sm opacity-90">Completion Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">50+</div>
+                        <div class="text-sm opacity-90">Expert Mentors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">How Ez School Works</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-2xl mx-auto">Learning should feel good. Here's how we make it happen.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-vibrant-purple to-purple-400 rounded-xl flex items-center justify-center text-white mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Choose Your Path</h3>
+                    <p class="text-gray-600 leading-relaxed">Browse curated courses from hand-selected mentors. Quality over quantity—every course is designed to advance your career.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-electric-blue to-blue-400 rounded-xl flex items-center justify-center text-white mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
+                            <polyline points="17 2 12 7 7 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Join Live Classes</h3>
+                    <p class="text-gray-600 leading-relaxed">Learn in real-time with interactive sessions. Ask questions, get instant feedback, and connect with fellow learners.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-coral-orange to-orange-400 rounded-xl flex items-center justify-center text-white mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Get Personal Support</h3>
+                    <p class="text-gray-600 leading-relaxed">Chat with mentors, book private sessions, and replay classes anytime. Your learning, your pace.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-soft-teal to-teal-400 rounded-xl flex items-center justify-center text-white mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Achieve Your Goals</h3>
+                    <p class="text-gray-600 leading-relaxed">Build real skills that matter. Track your progress, celebrate wins, and transform your career.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Search Section -->
+    <section class="py-20 ">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Ready to Level Up Your Skills?</h2>
+            <p class="text-xl text-gray-600 mb-8">Find the perfect course to advance your career today.</p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-6">
+                <input type="text" placeholder="What do you want to learn? (e.g., Python, Public Speaking, Leadership)" class="flex-1 px-6 py-4 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors">
+                <button class="bg-vibrant-purple text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    Search Courses
+                </button>
+            </div>
+            <div class="flex flex-wrap gap-3 justify-center">
+                <span class="text-gray-600 font-medium">Popular:</span>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">Web Development</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">Data Science</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">Communication Skills</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">Leadership</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">Digital Marketing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentors Section -->
+    <section class="py-20 bg-electric-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-white mb-4">Meet Our Mentors & Join Live Lessons</h2>
+            <p class="text-xl text-center text-gray-200 mb-16 max-w-2xl mx-auto">Learn from experts who actually care about your success. Try a free lesson!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop" alt="Sarah Chen" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">Live Now</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Sarah Chen</h3>
+                        <p class="text-gray-600 mb-4">Full-Stack Developer</p>
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                4.9
+                            </span>
+                            <span class="text-gray-500">1,234 students</span>
+                        </div>
+                        <div class="border-t pt-4">
+                            <p class="font-semibold text-gray-900 mb-1">React Hooks Masterclass</p>
+                            <p class="text-sm text-gray-500 mb-4">Today at 3:00 PM</p>
+                            <a href="#" class="block w-full bg-vibrant-purple text-white text-center px-4 py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors">Join Free Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="Marcus Johnson" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-electric-blue text-white px-3 py-1 rounded-full text-sm font-medium">Starting Soon</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Marcus Johnson</h3>
+                        <p class="text-gray-600 mb-4">Data Science Lead</p>
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                5.0
+                            </span>
+                            <span class="text-gray-500">856 students</span>
+                        </div>
+                        <div class="border-t pt-4">
+                            <p class="font-semibold text-gray-900 mb-1">Python for Data Analysis</p>
+                            <p class="text-sm text-gray-500 mb-4">Tomorrow at 5:30 PM</p>
+                            <a href="#" class="block w-full bg-vibrant-purple text-white text-center px-4 py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors">Join Free Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop" alt="Emma Rodriguez" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Emma Rodriguez</h3>
+                        <p class="text-gray-600 mb-4">UX Design Director</p>
+                        <div class="flex items-center gap-4 mb-4 text-sm">
+                            <span class="flex items-center gap-1 text-bright-yellow">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                4.8
+                            </span>
+                            <span class="text-gray-500">2,103 students</span>
+                        </div>
+                        <div class="border-t pt-4">
+                            <p class="font-semibold text-gray-900 mb-1">Figma Design Fundamentals</p>
+                            <p class="text-sm text-gray-500 mb-4">Wed at 2:00 PM</p>
+                            <a href="#" class="block w-full bg-vibrant-purple text-white text-center px-4 py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors">Join Free Lesson</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Why Choose Ez School?</h2>
+            <p class="text-xl text-center text-gray-600 mb-16">See how we stack up against traditional online learning platforms.</p>
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                <div class="grid grid-cols-3 gap-4 p-6 bg-gradient-to-r from-vibrant-purple to-electric-blue text-white font-bold">
+                    <div>Feature</div>
+                    <div class="text-center">Ez School</div>
+                    <div class="text-center">Udemy</div>
+                </div>
+                <div class="divide-y divide-gray-200">
+                    <div class="grid grid-cols-3 gap-4 p-6 items-center">
+                        <div class="font-semibold text-gray-900">Live Interactive Classes</div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 p-6 items-center">
+                        <div class="font-semibold text-gray-900">Direct Mentor Chat</div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 p-6 items-center">
+                        <div class="font-semibold text-gray-900">Curated Course Selection</div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 p-6 items-center">
+                        <div class="font-semibold text-gray-900">Private Lesson Booking</div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 p-6 items-center">
+                        <div class="font-semibold text-gray-900">Pre-recorded Content</div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <div class="text-center">
+                            <svg class="w-6 h-6 mx-auto text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-gray-600 mb-6">Quality mentorship + live interaction + flexible learning = Your success</p>
+                <a th:href="@{/courses}" class="inline-block bg-vibrant-purple text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Start Learning Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Simple, Transparent Pricing</h2>
+            <p class="text-xl text-center text-gray-600 mb-16">Choose the plan that works for you. All plans include live classes and mentor support.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Single Course</h3>
+                    <p class="text-gray-600 mb-6">Perfect for trying us out</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-gray-900">$49</span>
+                        <span class="text-gray-600">/course</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Access to all live sessions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Unlimited replays</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Chat with mentor</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Course materials & resources</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Community access</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full text-center bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">Get Started</a>
+                </div>
+
+                <div class="bg-gradient-to-br from-vibrant-purple to-electric-blue rounded-2xl shadow-xl p-8 text-white relative transform scale-105">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-coral-orange text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</div>
+                    <h3 class="text-2xl font-bold mb-2">Monthly Pass</h3>
+                    <p class="opacity-90 mb-6">Best value for committed learners</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">$99</span>
+                        <span class="opacity-90">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="font-semibold">Unlimited courses</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>All live sessions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Priority mentor support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="font-semibold">1 private lesson/month</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Downloadable resources</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Cancel anytime</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full text-center bg-white text-vibrant-purple px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Start Free Trial</a>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">For Business</h3>
+                    <p class="text-gray-600 mb-6">Empower your whole team</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-gray-900">Custom</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Everything in Monthly Pass</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Custom course requests</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">Team analytics & reporting</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span class="text-gray-600">SSO & integrations</span>
+                        </li>
+                    </ul>
+                    <a th:href="@{/contact}" class="block w-full text-center bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">Contact Sales</a>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-8">🎓 All plans include 30-day money-back guarantee. No questions asked.</p>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-vibrant-purple via-electric-blue to-vibrant-purple relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-coral-orange/10 via-transparent to-soft-teal/10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white">
+                <h2 class="text-4xl font-bold mb-4">Still Have Questions?</h2>
+                <p class="text-xl mb-8 opacity-95">We're here to help! Whether you're curious about courses, want to become a mentor, or just want to chat about your learning goals, our friendly team is ready to connect.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a th:href="@{/contact}" class="bg-white text-vibrant-purple px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Get in Touch</a>
+                    <a href="mailto:hello@ezschool.com" class="bg-vibrant-purple/20 backdrop-blur-sm text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="components/organisms/footer :: footer"></footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
