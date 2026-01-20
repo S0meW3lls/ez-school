@@ -2,12 +2,15 @@ package com.samueldeguio.ezschool.controller;
 
 import com.samueldeguio.ezschool.models.ContactRequest;
 import com.samueldeguio.ezschool.services.ContactRequestService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
 
+@Slf4j
 @Controller
 public class ContactController {
 
@@ -23,11 +26,15 @@ public class ContactController {
     }
 
     @PostMapping("/contact")
-    public ModelAndView sendContactRequest(ContactRequest request) {
+    public String sendContactRequest(@Valid @ModelAttribute("contact") ContactRequest request, Errors errors) {
+
+        // if any error is detected return to previous page
+        if(errors.hasErrors()) return "pages/contact.html";
 
         // save request to the database
         this.service.save(request);
 
-        return new ModelAndView("redirect:/contact");
+        //  full redirect clearing also previous data
+        return "redirect:/contact";
     }
 }
