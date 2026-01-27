@@ -1,0 +1,12 @@
+package com.samueldeguio.ezschool.exception;
+
+public class UnauthorizedException extends RuntimeException {
+    
+    public UnauthorizedException(String message) {
+        super(message);
+    }
+    
+    public UnauthorizedException() {
+        super("You must be logged in to access this resource");
+    }
+}

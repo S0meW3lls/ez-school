@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="components/organisms/header :: head"></head>
+<body class="bg-gray-50">
+    <nav th:replace="components/molecules/navbar :: nav"></nav>
+
+    <!-- Error Section -->
+    <section class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl w-full text-center">
+            <!-- Error Icon & Code -->
+            <div class="mb-8">
+                <div class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-coral-orange to-vibrant-purple rounded-full mb-6 animate-pulse">
+                    <svg class="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-vibrant-purple to-electric-blue bg-clip-text text-transparent mb-4" th:text="${errorCode} ?: '500'">
+                    500
+                </h1>
+            </div>
+
+            <!-- Error Content Card -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-6">
+                <!-- Error Title -->
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900" th:text="${errorTitle} ?: 'Oops! Something Went Wrong'">
+                    Oops! Something Went Wrong
+                </h2>
+
+                <!-- Error Message -->
+                <p class="text-lg text-gray-600 leading-relaxed" th:text="${errorMessage} ?: 'We encountered an unexpected error. Don\'t worry, we\'re on it!'">
+                    We encountered an unexpected error. Don't worry, we're on it!
+                </p>
+
+                <!-- Error Details (if available) -->
+                <div th:if="${errorDetails}" class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4">
+                    <p class="text-sm text-gray-500" th:text="${errorDetails}">
+                        Additional error details will appear here.
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+                    <a th:href="@{/}" class="bg-gradient-to-r from-vibrant-purple to-electric-blue text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        <svg class="w-5 h-5 inline-block mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                        Go Home
+                    </a>
+                    <button onclick="history.back()" class="bg-white text-vibrant-purple border-2 border-vibrant-purple px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                        <svg class="w-5 h-5 inline-block mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"/>
+                            <polyline points="12 19 5 12 12 5"/>
+                        </svg>
+                        Go Back
+                    </button>
+                </div>
+
+                <!-- Help Links -->
+                <div class="pt-6 border-t border-gray-200">
+                    <p class="text-sm text-gray-600 mb-3">Need assistance?</p>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <a th:href="@{/contact}" class="text-electric-blue hover:text-vibrant-purple font-medium transition-colors">
+                            Contact Support
+                        </a>
+                        <span class="text-gray-300">|</span>
+                        <a th:href="@{/courses}" class="text-electric-blue hover:text-vibrant-purple font-medium transition-colors">
+                            Browse Courses
+                        </a>
+                        <span class="text-gray-300">|</span>
+                        <a href="#" class="text-electric-blue hover:text-vibrant-purple font-medium transition-colors">
+                            Help Center
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Friendly Message -->
+            <div class="mt-8 bg-gradient-to-r from-vibrant-purple/10 to-electric-blue/10 rounded-2xl p-6">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-gradient-to-br from-soft-teal to-bright-yellow rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-semibold text-gray-900 mb-1">Don't worry, your progress is safe!</h3>
+                        <p class="text-sm text-gray-600">All your courses, lessons, and achievements are securely stored. This is just a temporary hiccup on your learning journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="components/organisms/footer :: footer"></footer>
+</body>
+</html>
