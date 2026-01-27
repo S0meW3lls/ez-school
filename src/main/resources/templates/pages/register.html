@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="components/organisms/header :: head"></head>
+<body class="bg-gray-50">
+    <nav th:replace="components/molecules/navbar :: nav"></nav>
+
+    <!-- Sign Up Section -->
+    <section class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full">
+            <!-- Sign Up Card -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+                <!-- Header -->
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-vibrant-purple to-electric-blue rounded-xl mb-4">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="7" r="4"/>
+                            <line x1="20" y1="8" x2="20" y2="14"/>
+                            <line x1="23" y1="11" x2="17" y2="11"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Start Your Journey!</h1>
+                    <p class="text-gray-600">Join thousands of learners growing their skills</p>
+                </div>
+
+                <!-- Sign Up Form -->
+                <form class="space-y-5" th:action="@{/register}" method="post">
+                    <!-- Full Name Field -->
+                    <div>
+                        <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            required 
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors"
+                            placeholder="Enter your full name"
+                        >
+                    </div>
+
+                    <!-- Username Field -->
+                    <div>
+                        <label for="username" class="block text-sm font-semibold text-gray-700 mb-2">Username</label>
+                        <input 
+                            id="username"
+                            name="username"
+                            required 
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors"
+                            placeholder="username"
+                        >
+                    </div>
+
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                        <input
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors"
+                            placeholder="your@email.com"
+                        >
+                    </div>
+
+                    <!-- Password Field -->
+                    <div>
+                        <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            minlength="8"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors"
+                            placeholder="Create a strong password"
+                        >
+                        <p class="mt-1 text-xs text-gray-500">At least 8 characters</p>
+                    </div>
+
+                    <!-- Confirm Password Field -->
+                    <div>
+                        <label for="confirmPassword" class="block text-sm font-semibold text-gray-700 mb-2">Confirm Password</label>
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            required 
+                            minlength="8"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors"
+                            placeholder="Confirm your password"
+                        >
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div>
+                        <label class="flex items-start">
+                            <input type="checkbox" name="terms" required class="w-4 h-4 mt-1 text-vibrant-purple border-gray-300 rounded focus:ring-vibrant-purple">
+                            <span class="ml-2 text-sm text-gray-600">
+                                I agree to the <a href="#" class="text-electric-blue hover:text-vibrant-purple font-medium transition-colors">Terms of Service</a> and <a href="#" class="text-electric-blue hover:text-vibrant-purple font-medium transition-colors">Privacy Policy</a>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Error Message (if any) -->
+                    <div th:if="${error}" class="bg-coral-orange/10 border-2 border-coral-orange/30 rounded-lg p-4">
+                        <p class="text-sm text-coral-orange font-medium" th:text="${error}">An error occurred. Please try again.</p>
+                    </div>
+
+                    <!-- Success Message (if any) -->
+                    <div th:if="${success}" class="bg-soft-teal/10 border-2 border-soft-teal/30 rounded-lg p-4">
+                        <p class="text-sm text-soft-teal font-medium" th:text="${success}">Account created successfully!</p>
+                    </div>
+
+                    <!-- Sign Up Button -->
+                    <button 
+                        type="submit" 
+                        class="w-full bg-gradient-to-r from-vibrant-purple to-electric-blue text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                    >
+                        Create Account
+                    </button>
+                </form>
+
+                <!-- Login Link -->
+                <div class="text-center pt-4 border-t border-gray-200">
+                    <p class="text-gray-600">
+                        Already have an account? 
+                        <a th:href="@{/login}" class="font-semibold text-electric-blue hover:text-vibrant-purple transition-colors">Sign in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="components/organisms/footer :: footer"></footer>
+</body>
+</html>

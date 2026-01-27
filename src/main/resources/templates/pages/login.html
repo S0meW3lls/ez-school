@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="components/organisms/header :: head"></head>
+<body class="bg-gray-50">
+    <nav th:replace="components/molecules/navbar :: nav"></nav>
+
+    <!-- Login Section -->
+    <section class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full">
+            <!-- Login Card -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+                <!-- Header -->
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-vibrant-purple to-electric-blue rounded-xl mb-4">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                            <polyline points="10 17 15 12 10 7"/>
+                            <line x1="15" y1="12" x2="3" y2="12"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Welcome Back!</h1>
+                    <p class="text-gray-600">Ready to continue your learning journey?</p>
+                </div>
+
+                <!-- Login Form -->
+                <form class="space-y-5" th:action="@{/login}" method="post">
+                    <!-- Email Field -->
+                    <div>
+                        <label for="username" class="block text-sm font-semibold text-gray-700 mb-2">Username</label>
+                        <input
+                            id="username"
+                            name="username"
+                            required 
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors"
+                            placeholder="username"
+                        >
+                    </div>
+
+                    <!-- Password Field -->
+                    <div>
+                        <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-colors"
+                            placeholder="Enter your password"
+                        >
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="remember" class="w-4 h-4 text-vibrant-purple border-gray-300 rounded focus:ring-vibrant-purple">
+                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm font-medium text-electric-blue hover:text-vibrant-purple transition-colors">Forgot password?</a>
+                    </div>
+
+                    <!-- Error Message (if any) -->
+                    <div th:if="${error}" class="bg-red-500/10 border-2 border-red-500/30 rounded-lg p-4">
+                        <p class="text-sm text-red-500 font-medium">Invalid email or password. Please try again.</p>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button 
+                        type="submit" 
+                        class="w-full bg-gradient-to-r from-vibrant-purple to-electric-blue text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                    >
+                        Sign In
+                    </button>
+                </form>
+                <!-- Sign Up Link -->
+                <div class="text-center pt-4 border-t border-gray-200">
+                    <p class="text-gray-600">
+                        Don't have an account? 
+                        <a th:href="@{/register}" class="font-semibold text-electric-blue hover:text-vibrant-purple transition-colors">Sign up now</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Help Text -->
+            <p class="text-center text-sm text-gray-500 mt-6">
+                Need help? <a href="#" class="text-electric-blue hover:text-vibrant-purple font-medium transition-colors">Contact support</a>
+            </p>
+        </div>
+    </section>
+
+    <footer th:replace="components/organisms/footer :: footer"></footer>
+</body>
+</html>
