@@ -5,13 +5,27 @@
             <a href="/" class="flex items-center">
                 <span class="text-2xl font-bold bg-gradient-to-r from-vibrant-purple to-electric-blue bg-clip-text text-transparent">Ez School</span>
             </a>
-            <div class="hidden md:flex items-center space-x-8">
+            <!-- Public Menu -->
+            <div sec:authorize="!isAuthenticated()" class="hidden md:flex items-center space-x-8">
                 <a th:href="@{/}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Home</a>
                 <a th:href="@{/courses}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Courses</a>
                 <a th:href="@{/mentors}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Mentors</a>
+                <a th:href="@{/dashboard}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Dashboard</a>
                 <a th:href="@{/business}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">For Business</a>
                 <a th:href="@{/contact}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Contact</a>
                 <a th:href="@{/login}" class="bg-vibrant-purple text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors font-medium">Login</a>
+            </div>
+            <!-- Authenticated Menu -->
+            <div sec:authorize="isAuthenticated()" class="hidden md:flex items-center space-x-8">
+                <a th:href="@{/dashboard}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Dashboard</a>
+                <a th:href="@{/logout}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Logout</a>
+                <div class="flex items-center justify-center transition hover:bg-neutral-100 rounded-lg py-2 px-3 cursor-pointer" >
+                    <img src="https://picsum.photos/200" alt="SD"  class="rounded-full h-10 w-10 block mr-3"/>
+                    <div>
+                        <div class="text-sm text-bold">Samuel De Guio</div>
+                        <div class="text-xs text-neutral-400">@samueldeguio</div>
+                    </div>
+                </div>
             </div>
             <button class="md:hidden flex flex-col space-y-1.5" id="mobile-menu-btn" aria-label="Toggle menu">
                 <span class="block w-6 h-0.5 bg-gray-700"></span>

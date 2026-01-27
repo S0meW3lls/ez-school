@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="components/organisms/header :: head"></head>
+<body class="bg-gray-50">
+    <nav th:replace="components/molecules/navbar :: nav"></nav>
+
+    <!-- Dashboard Container -->
+    <div class="pt-24 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Welcome Header -->
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Welcome back! 👋</h1>
+            <p class="text-xl text-gray-600">Ready to continue your learning journey?</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Courses Enrolled -->
+            <div class="bg-gradient-to-br from-vibrant-purple to-purple-600 rounded-2xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-sm font-medium opacity-90">Courses Enrolled</h3>
+                    <svg class="w-8 h-8 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </div>
+                <p class="text-4xl font-bold" th:text="${coursesEnrolled}">5</p>
+                <p class="text-sm opacity-80 mt-1">Active learning paths</p>
+            </div>
+
+            <!-- Courses Completed -->
+            <div class="bg-gradient-to-br from-electric-blue to-blue-600 rounded-2xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-sm font-medium opacity-90">Completed</h3>
+                    <svg class="w-8 h-8 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <p class="text-4xl font-bold" th:text="${coursesCompleted}">2</p>
+                <p class="text-sm opacity-80 mt-1">Courses finished</p>
+            </div>
+
+            <!-- Total Watch Time -->
+            <div class="bg-gradient-to-br from-coral-orange to-orange-600 rounded-2xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-sm font-medium opacity-90">Watch Time</h3>
+                    <svg class="w-8 h-8 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <p class="text-4xl font-bold"><span th:text="${totalWatchTime}">24</span>h</p>
+                <p class="text-sm opacity-80 mt-1">This month</p>
+            </div>
+
+            <!-- Current Streak -->
+            <div class="bg-gradient-to-br from-soft-teal to-teal-600 rounded-2xl p-6 text-white shadow-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-sm font-medium opacity-90">Current Streak</h3>
+                    <svg class="w-8 h-8 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                    </svg>
+                </div>
+                <p class="text-4xl font-bold"><span th:text="${currentStreak}">8</span> 🔥</p>
+                <p class="text-sm opacity-80 mt-1">Days learning</p>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Left Column (2/3) -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- Continue Learning Section -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Continue Learning</h2>
+                    <div class="space-y-4">
+                        <div th:each="course : ${currentCourses}" class="border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h3 class="font-bold text-gray-900 text-lg" th:text="${course.title}">Course Title</h3>
+                                    <p class="text-sm text-gray-600" th:text="${course.mentor}">Mentor Name</p>
+                                </div>
+                                <span class="bg-vibrant-purple/10 text-vibrant-purple text-sm font-semibold px-3 py-1 rounded-full" th:text="${course.progress} + '%'">65%</span>
+                            </div>
+                            <div class="mb-3">
+                                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                    <span th:text="${course.lessonsCompleted} + ' of ' + ${course.totalLessons} + ' lessons'">24 of 36 lessons</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-gradient-to-r from-vibrant-purple to-electric-blue h-2.5 rounded-full transition-all duration-500" th:style="'width: ' + ${course.progress} + '%'"></div>
+                                </div>
+                            </div>
+                            <button class="w-full bg-vibrant-purple text-white px-4 py-2.5 rounded-lg font-medium hover:bg-purple-700 transition-colors">Continue Course</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Classes Section -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Upcoming Live Classes</h2>
+                        <a href="#" class="text-vibrant-purple font-medium hover:text-purple-700">View All</a>
+                    </div>
+                    <div class="space-y-4">
+                        <div th:each="liveClass : ${liveClasses}" class="flex items-start gap-4 border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+                            <div class="flex-shrink-0">
+                                <div th:classappend="${liveClass.status == 'live'} ? 'bg-red-500 animate-pulse' : 'bg-' + ${liveClass.color}" class="w-12 h-12 rounded-xl flex items-center justify-center text-white">
+                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
+                                        <polyline points="17 2 12 7 7 2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-2">
+                                    <h3 class="font-bold text-gray-900" th:text="${liveClass.title}">Class Title</h3>
+                                    <span th:if="${liveClass.status == 'live'}" class="flex-shrink-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">LIVE</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2" th:text="${liveClass.mentor}">Mentor Name</p>
+                                <div class="flex items-center gap-4 text-sm">
+                                    <span class="text-gray-700 font-medium" th:text="${liveClass.day} + ' at ' + ${liveClass.time}">Today at 3:00 PM</span>
+                                </div>
+                            </div>
+                            <button th:classappend="${liveClass.status == 'live'} ? 'bg-red-500 hover:bg-red-600' : 'bg-electric-blue hover:bg-blue-600'" class="flex-shrink-0 text-white px-4 py-2 rounded-lg font-medium transition-colors text-sm" th:text="${liveClass.status == 'live'} ? 'Join Now' : 'Set Reminder'">Join Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements Section -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Achievements</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div th:each="achievement : ${achievements}" th:classappend="${achievement.unlocked} ? 'bg-gradient-to-br from-vibrant-purple/10 to-electric-blue/10 border-vibrant-purple' : 'bg-gray-50 border-gray-200 opacity-60'" class="border-2 rounded-xl p-4 text-center transition-all hover:scale-105">
+                            <div class="text-4xl mb-2" th:text="${achievement.icon}">🎓</div>
+                            <h3 class="font-bold text-gray-900 text-sm mb-1" th:text="${achievement.title}">Achievement</h3>
+                            <p class="text-xs text-gray-600" th:text="${achievement.description}">Description</p>
+                            <div th:if="${achievement.unlocked}" class="mt-2">
+                                <svg class="w-5 h-5 mx-auto text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column (1/3) -->
+            <div class="space-y-8">
+                
+                <!-- Calendar Section -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Your Schedule</h2>
+                    <div class="text-center mb-4">
+                        <p class="text-sm font-semibold text-gray-600" th:text="${currentMonth}">January 2026</p>
+                    </div>
+                    <div class="space-y-3 max-h-96 overflow-y-auto">
+                        <div th:each="event : ${calendarEvents}" class="border-l-4 pl-3 py-2 hover:bg-gray-50 rounded-r transition-colors" th:classappend="'border-' + ${event.color}">
+                            <div class="flex items-start justify-between gap-2">
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-xs font-bold text-gray-500 uppercase" th:text="${event.dayName}">MON</p>
+                                    <p class="font-semibold text-gray-900 text-sm truncate" th:text="${event.title}">Event Title</p>
+                                    <p class="text-xs text-gray-600" th:text="${event.time}">3:00 PM</p>
+                                </div>
+                                <div th:classappend="'bg-' + ${event.color}" class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm" th:text="${event.day}">25</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="bg-gradient-to-br from-vibrant-purple to-electric-blue rounded-2xl shadow-lg p-6 text-white">
+                    <h2 class="text-xl font-bold mb-4">Quick Stats</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between pb-3 border-b border-white/20">
+                            <span class="text-sm opacity-90">Completion Rate</span>
+                            <span class="text-lg font-bold" th:text="${completionRate} + '%'">87%</span>
+                        </div>
+                        <div class="flex items-center justify-between pb-3 border-b border-white/20">
+                            <span class="text-sm opacity-90">Live Classes Attended</span>
+                            <span class="text-lg font-bold">12</span>
+                        </div>
+                        <div class="flex items-center justify-between pb-3 border-b border-white/20">
+                            <span class="text-sm opacity-90">Certificates Earned</span>
+                            <span class="text-lg font-bold" th:text="${coursesCompleted}">2</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm opacity-90">Forum Posts</span>
+                            <span class="text-lg font-bold">24</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Support CTA -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border-2 border-coral-orange">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-coral-orange rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Need Help?</h3>
+                        <p class="text-sm text-gray-600 mb-4">Chat with your mentors or book a private session</p>
+                        <button class="w-full bg-coral-orange text-white px-4 py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors">Contact Mentor</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer th:replace="components/organisms/footer :: footer"></footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
