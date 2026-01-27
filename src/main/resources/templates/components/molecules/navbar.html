@@ -18,7 +18,11 @@
             <!-- Authenticated Menu -->
             <div sec:authorize="isAuthenticated()" class="hidden md:flex items-center space-x-8">
                 <a th:href="@{/dashboard}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Dashboard</a>
-                <a th:href="@{/logout}" class="text-gray-700 hover:text-vibrant-purple transition-colors font-medium">Logout</a>
+                <form id="logout-form" th:action="@{/logout}" method="POST">
+                    <button type="submit" class="w-full text-vibrant-purple px-6 py-4 hover:text-purple-700 transition-colors">
+                        Logout
+                    </button>
+                </form>
                 <div class="flex items-center justify-center transition hover:bg-neutral-100 rounded-lg py-2 px-3 cursor-pointer" >
                     <img src="https://picsum.photos/200" alt="SD"  class="rounded-full h-10 w-10 block mr-3"/>
                     <div>
